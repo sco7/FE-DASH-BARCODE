@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroupDirective, FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
-import { AuthService } from '../../auth.service/auth.service.component';
+import { AuthService } from '../../services/auth.service/auth.service';
 import { Router } from '@angular/router';
 import { ErrorStateMatcher } from '@angular/material/core';
 
@@ -12,7 +12,7 @@ import { ErrorStateMatcher } from '@angular/material/core';
 export class RegisterComponent implements OnInit {
 
   registerForm: FormGroup;
-  fullName = '';
+  userName = '';
   email = '';
   password = '';
   isLoadingResults = false;
@@ -22,7 +22,7 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit() {
     this.registerForm = this.formBuilder.group({
-      'fullName' : [null, Validators.required],
+      'userName' : [null, Validators.required],
       'email' : [null, Validators.required],
       'password' : [null, Validators.required]
     });

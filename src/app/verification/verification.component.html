@@ -9,10 +9,52 @@
   <div class="mat-elevation-z8">
     <table mat-table [dataSource]="data" class="example-table">
 
-      <!-- Book ID Column -->
-      <ng-container matColumnDef="verificationID">
+      <!-- Verification ID Column -->
+      <ng-container matColumnDef="verificationId">
         <th mat-header-cell *matHeaderCellDef>Verification ID</th>
-        <td mat-cell *matCellDef="let row">{{row.bookId}}</td>
+        <td mat-cell *matCellDef="let row">{{row.verificationID}}</td>
+      </ng-container>
+
+       <!-- Chassis No Column -->
+       <ng-container matColumnDef="chassisNo">
+        <th mat-header-cell *matHeaderCellDef>Chassis No</th>
+        <td mat-cell *matCellDef="let row">{{row.chassisNo}}</td>
+      </ng-container>
+
+      <!-- First Verification User Name Column -->
+      <ng-container matColumnDef="v1UserName">
+        <th mat-header-cell *matHeaderCellDef>V1 UserName</th>
+        <td mat-cell *matCellDef="let row">{{row.v1UserName}}</td>
+      </ng-container>
+
+      <!-- First Verification Date Column -->
+      <ng-container matColumnDef="v1DateTime">
+        <th mat-header-cell *matHeaderCellDef>V1 DateTime</th>
+        <td mat-cell *matCellDef="let row">{{row.v1DateTime}}</td>
+      </ng-container>
+
+      <!-- First Verification Passed Column -->
+      <ng-container matColumnDef="v1Passed">
+        <th mat-header-cell *matHeaderCellDef>V1 Result</th>
+        <td mat-cell *matCellDef="let row">{{row.v1Passed}}</td>
+      </ng-container>
+
+      <!-- Second Verification User Name Column -->
+      <ng-container matColumnDef="v2UserName">
+        <th mat-header-cell *matHeaderCellDef>V2 UserName</th>
+        <td mat-cell *matCellDef="let row">{{row.v2UserName}}</td>
+      </ng-container>
+
+      <!-- Second Verification Date Column -->
+      <ng-container matColumnDef="v2DateTime">
+        <th mat-header-cell *matHeaderCellDef>V2 DateTime</th>
+        <td mat-cell *matCellDef="let row">{{row.v2DateTime}}</td>
+      </ng-container>
+
+      <!-- Second Verification Passed Column -->
+      <ng-container matColumnDef="v2Passed">
+        <th mat-header-cell *matHeaderCellDef>V2 Result</th>
+        <td mat-cell *matCellDef="let row">{{row.v2Passed}}</td>
       </ng-container>
 
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

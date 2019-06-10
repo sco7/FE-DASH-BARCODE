@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Verification } from '../../verification/verification';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
@@ -6,25 +7,17 @@ import { catchError, tap } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService {
+export class VerificationService {
 
-  apiUrl = ' https://localhost:5001';
+  apiUrl = 'https://localhost:6001/api/verification';
 
   constructor(private http: HttpClient) { }
 
-  login(data: any): Observable<any> {
-    return this.http.post<any>(this.apiUrl + 'login', data)
+  getVerification(): Observable<Verification[]> {
+    return this.http.get<Verification[]>(this.apiUrl)
       .pipe(
-        tap(_ => this.log('login')),
-        catchError(this.handleError('login', []))
-      );
-  }
-
-  register(data: any): Observable<any> {
-    return this.http.post<any>(this.apiUrl + 'register', data)
-      .pipe(
-        tap(_ => this.log('register')),
-        catchError(this.handleError('register', []))
+        tap(_ => this.log('fetched verifications')),
+        catchError(this.handleError('getVerification', []))
       );
   }
 

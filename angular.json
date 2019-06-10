@@ -120,7 +120,7 @@
   "defaultProject": "FontaineFront",
   "schematics": {
     "@schematics/angular:component": {
-      "styleext": "scss"
+      "styleext": "styl"
     }
   }
 }

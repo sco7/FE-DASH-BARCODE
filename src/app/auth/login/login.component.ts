@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroupDirective, FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
-import { AuthService } from '../../auth.service/auth.service.component';
+import { AuthService } from '../../services/auth.service/auth.service';
 import { Router } from '@angular/router';
 import { ErrorStateMatcher } from '@angular/material/core';
 
@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
         console.log(res);
         if (res.token) {
           localStorage.setItem('token', res.token);
-          this.router.navigate(['book']);
+          this.router.navigate(['verification']);
         }
       }, (err) => {
         console.log(err);
