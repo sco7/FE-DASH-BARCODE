@@ -46,13 +46,17 @@ export class TokenInterceptor implements HttpInterceptor {
                   type: 'success',
                   title: 'Registered',
                   text: 'New user registered!',
+                  confirmButtonColor: '#ff0066' 
                 });
               }
               if (event.statusText === "OK") {
                 Swal.fire({
                   type: 'success',
-                  title: 'Logged In',
-                  text: 'User has successfully logged in!',
+                  title: 'Logged in successfully',
+                  toast: true,
+                  position: 'top-end',
+                  showConfirmButton: false,
+                  timer: 3000
                 });
               }
             }         
@@ -80,8 +84,8 @@ export class TokenInterceptor implements HttpInterceptor {
                 type: 'error',
                 title: 'Oops',
                 text: errorMessage,
-              });
-              
+                confirmButtonColor: '#ff0066' 
+              });             
               
             }
             return throwError(error);
