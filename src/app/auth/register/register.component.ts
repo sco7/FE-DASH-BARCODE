@@ -4,6 +4,7 @@ import { AuthService } from '../../services/auth.service/auth.service';
 import { Router } from '@angular/router';
 import { ErrorStateMatcher } from '@angular/material/core';
 
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -32,12 +33,15 @@ export class RegisterComponent implements OnInit {
     this.authService.register(form)
       .subscribe(res => {
         this.router.navigate(['login']);
-      }, (err) => {
+      }, (err) => {       
         console.log(err);
-        alert(err.error);
+        alert(err.error);     
       });
   }
 
+  back() {
+    this.router.navigate(['login']);
+  }
 }
 
 /** Error when invalid control is dirty, touched, or submitted. */

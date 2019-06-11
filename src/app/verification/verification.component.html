@@ -30,7 +30,7 @@
       <!-- First Verification Date Column -->
       <ng-container matColumnDef="v1DateTime">
         <th mat-header-cell *matHeaderCellDef>V1 DateTime</th>
-        <td mat-cell *matCellDef="let row">{{row.v1DateTime}}</td>
+        <td mat-cell *matCellDef="let row">{{row.v1DateTime  | date : 'medium'}}</td>
       </ng-container>
 
       <!-- First Verification Passed Column -->
@@ -48,7 +48,7 @@
       <!-- Second Verification Date Column -->
       <ng-container matColumnDef="v2DateTime">
         <th mat-header-cell *matHeaderCellDef>V2 DateTime</th>
-        <td mat-cell *matCellDef="let row">{{row.v2DateTime}}</td>
+        <td mat-cell *matCellDef="let row">{{row.v2DateTime | date : 'medium'}}</td>
       </ng-container>
 
       <!-- Second Verification Passed Column -->
