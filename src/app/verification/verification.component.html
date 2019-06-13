@@ -1,13 +1,18 @@
-<div class="example-container mat-elevation-z8">
-  <div class="example-loading-shade"
+<div class="result-container mat-elevation-z8">
+  <div class="loading-shade"
        *ngIf="isLoadingResults">
     <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
   </div>
   <div class="button-row">
     <a mat-flat-button color="primary" (click)="logout()">Logout</a>
-  </div>
+    <mat-form-field>
+      <input matInput (keyup)="applyFilter($event.target.value)" autofocus> <mat-placeholder class="placeholder">Search</mat-placeholder>  
+    </mat-form-field>
+      <button id="register" type="button" mat-flat-button color="primary" (click)="register()">Register New User</button> 
+  </div> 
+
   <div class="mat-elevation-z8">
-    <table mat-table [dataSource]="data" class="example-table">
+    <table mat-table [dataSource]="dataSource" class="result-table">
 
       <!-- Verification ID Column -->
       <ng-container matColumnDef="verificationId">

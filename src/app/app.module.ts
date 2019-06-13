@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { VerificationComponent } from './verification/verification.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
-
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { TokenInterceptor } from './interceptors/token.interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';

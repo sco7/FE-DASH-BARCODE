@@ -3,7 +3,7 @@ import { FormControl, FormGroupDirective, FormBuilder, FormGroup, NgForm, Valida
 import { AuthService } from '../../services/auth.service/auth.service';
 import { Router } from '@angular/router';
 import { ErrorStateMatcher } from '@angular/material/core';
-
+import { RegistrationService } from '../../services/registration.service/registration.service'
 
 @Component({
   selector: 'app-register',
@@ -19,9 +19,16 @@ export class RegisterComponent implements OnInit {
   isLoadingResults = false;
   matcher = new MyErrorStateMatcher();
 
-  constructor(private formBuilder: FormBuilder, private router: Router, private authService: AuthService) { }
+  constructor(private registrationService: RegistrationService, private formBuilder: FormBuilder, private router: Router, private authService: AuthService) { }
 
   ngOnInit() {
+    this.registrationService.getVerification()
+    .subscribe(verifications => {
+      this.isLoadingResults = false;
+    }, err => {
+      console.log(err);
+      this.isLoadingResults = false;
+    });
     this.registerForm = this.formBuilder.group({
       'userName' : [null, Validators.required],
       'email' : [null, Validators.required],
@@ -40,8 +47,13 @@ export class RegisterComponent implements OnInit {
   }
 
   back() {
+    localStorage.removeItem('token');
     this.router.navigate(['login']);
   }
+
+  forgotPassword() {
+  }
+
 }
 
 /** Error when invalid control is dirty, touched, or submitted. */

@@ -10,7 +10,7 @@ import {
 import { Observable, throwError } from 'rxjs';
 import { map, catchError, switchAll } from 'rxjs/operators';
 import { Router } from '@angular/router';
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
 
 @Injectable()
 export class TokenInterceptor implements HttpInterceptor {

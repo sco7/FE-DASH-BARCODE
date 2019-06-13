@@ -38,11 +38,6 @@ export class LoginComponent implements OnInit {
         console.log(err);
       });
   }
-
-  register() {
-    this.router.navigate(['register']);
-  }
-
 }
 
 /** Error when invalid control is dirty, touched, or submitted. */

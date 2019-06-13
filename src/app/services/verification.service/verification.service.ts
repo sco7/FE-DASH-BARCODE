@@ -20,7 +20,6 @@ export class VerificationService {
         catchError(this.handleError('getVerification', []))
       );
   }
-
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
 
