@@ -13,7 +13,7 @@ import { MatTableDataSource } from '@angular/material/table';
 export class VerificationComponent implements OnInit {
 
   data: Verification[] = [];
-  displayedColumns: string[] = ['verificationId', 'chassisNo', 'v1UserName', 'v1DateTime', 'v1Passed', 'v2UserName', 'v2DateTime', 'v2Passed'];
+  displayedColumns: string[] = ['chassisNo', 'v1UserName', 'v1DateTime', 'v1Passed', 'v2UserName', 'v2DateTime', 'v2Passed'];
   isLoadingResults = true;
   dataSource: MatTableDataSource<Verification>;
   

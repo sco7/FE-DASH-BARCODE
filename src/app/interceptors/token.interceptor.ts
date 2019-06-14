@@ -49,7 +49,7 @@ export class TokenInterceptor implements HttpInterceptor {
                   confirmButtonColor: '#ff0066' 
                 });
               }
-              if (event.statusText === "OK") {
+              if (event.statusText === "OK" && this.router.url === '/verification') {             
                 Swal.fire({
                   type: 'success',
                   title: 'Logged in successfully',

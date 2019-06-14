@@ -39,7 +39,7 @@ export class RegisterComponent implements OnInit {
   onFormSubmit(form: NgForm) {
     this.authService.register(form)
       .subscribe(res => {
-        this.router.navigate(['login']);
+        //this.router.navigate(['register']);
       }, (err) => {       
         console.log(err);
         alert(err.error);     
@@ -47,13 +47,9 @@ export class RegisterComponent implements OnInit {
   }
 
   back() {
-    localStorage.removeItem('token');
-    this.router.navigate(['login']);
+    //localStorage.removeItem('token');
+    this.router.navigate(['verification']);
   }
-
-  forgotPassword() {
-  }
-
 }
 
 /** Error when invalid control is dirty, touched, or submitted. */
