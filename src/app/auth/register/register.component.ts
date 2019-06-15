@@ -13,8 +13,8 @@ import { RegistrationService } from '../../services/registration.service/registr
 export class RegisterComponent implements OnInit {
 
   registerForm: FormGroup;
+  fullName = '';
   userName = '';
-  email = '';
   password = '';
   isLoadingResults = false;
   matcher = new MyErrorStateMatcher();
@@ -30,8 +30,8 @@ export class RegisterComponent implements OnInit {
       this.isLoadingResults = false;
     });
     this.registerForm = this.formBuilder.group({
+      'fullName' : [null, Validators.required],
       'userName' : [null, Validators.required],
-      'email' : [null, Validators.required],
       'password' : [null, Validators.required]
     });
   }
