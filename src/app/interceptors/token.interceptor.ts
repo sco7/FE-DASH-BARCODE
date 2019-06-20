@@ -74,7 +74,7 @@ export class TokenInterceptor implements HttpInterceptor {
               if (error.error.FullName !== undefined) errorMessage += (" " + error.error.FullName[0]);
               if (error.error.UserName !== undefined) errorMessage += (" " + error.error.UserName[0]);
               if (error.error.Password !== undefined) errorMessage += (" " + error.error.Password[0]);
-              if (error.error === "UserName already exists") errorMessage += (" UserName already exists.");
+              if (error.error === "This UserName is already registered") errorMessage += (" This UserName is already registered.");
               if (error.error === "User not registered! Please check that your UserName and Password have been entered correctly"){
                 errorMessage += (" User not registered! Please check that your UserName and Password have been entered correctly.");
               }

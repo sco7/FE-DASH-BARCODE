@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Verification } from './verification';
 import { VerificationService } from '../services/verification.service/verification.service';
 import { AuthService } from '../services/auth.service/auth.service';
 import { Router } from '@angular/router';
 import { MatTableDataSource } from '@angular/material/table';
+import  { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
 
 @Component({
   selector: 'app-verification',
@@ -19,6 +21,9 @@ export class VerificationComponent implements OnInit {
   
   constructor(private verificationService: VerificationService, private authService: AuthService, private router: Router) {
   }
+
+  @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
+  @ViewChild(MatSort, {static: true}) sort: MatSort;
   
   ngOnInit() {
     this.getVerification();
@@ -33,6 +38,8 @@ export class VerificationComponent implements OnInit {
       .subscribe(verifications => {
         this.data = verifications;
         this.dataSource = new MatTableDataSource(this.data);
+        this.dataSource.paginator = this.paginator;
+        this.dataSource.sort = this.sort;
         console.log(this.data);
         this.isLoadingResults = false;
       }, err => {
