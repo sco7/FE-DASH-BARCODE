@@ -15,7 +15,7 @@ import { MatSort } from '@angular/material/sort';
 export class VerificationComponent implements OnInit {
 
   data: Verification[] = [];
-  displayedColumns: string[] = ['chassisNo', 'v1UserName', 'v1DateTime', 'v1Passed', 'v2UserName', 'v2DateTime', 'v2Passed'];
+  displayedColumns: string[] = ['chassisNo', 'salesOrder', 'v1UserName', 'v1DateTime', 'v1Passed', 'v2UserName', 'v2DateTime', 'v2Passed'];
   isLoadingResults = true;
   dataSource: MatTableDataSource<Verification>;
   

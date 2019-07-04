@@ -7,4 +7,9 @@ export class Verification {
     V2UserName: string;
     V2DateTime: Date;
     V2Passed: string;
+    SalesOrder: string;
+    CustomerStockCode: string;
+    StockDescription: string;
+    DispatchDate: Date;
+    StockCode: string;
   }

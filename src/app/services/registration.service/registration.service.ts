@@ -11,7 +11,7 @@ export class RegistrationService {
 
     // Request random Authorized API endpoint to check user has Authentication
 
-    apiUrl = 'https://localhost:6001/api/verification';
+    apiUrl = 'https://localhost:5000/api/verification';
 
     constructor(private http: HttpClient) { }
 

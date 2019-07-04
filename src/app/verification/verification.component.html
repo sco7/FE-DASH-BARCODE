@@ -26,40 +26,70 @@
         <td mat-cell *matCellDef="let row">{{row.chassisNo}}</td>
       </ng-container>
 
-      <!-- First Verification User Name Column -->
+      <!-- V1 User Name Column -->
       <ng-container matColumnDef="v1UserName">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>V1 UserName</th>
         <td mat-cell *matCellDef="let row">{{row.v1UserName}}</td>
       </ng-container>
 
-      <!-- First Verification Date Column -->
+      <!-- V1 Date Column -->
       <ng-container matColumnDef="v1DateTime">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>V1 DateTime</th>
         <td mat-cell *matCellDef="let row">{{row.v1DateTime  | date : 'medium'}}</td>
       </ng-container>
 
-      <!-- First Verification Passed Column -->
+      <!-- V1 Passed Column -->
       <ng-container matColumnDef="v1Passed">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>V1 Result</th>
         <td mat-cell *matCellDef="let row">{{row.v1Passed}}</td>
       </ng-container>
 
-      <!-- Second Verification User Name Column -->
+      <!-- V2 User Name Column -->
       <ng-container matColumnDef="v2UserName">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>V2 UserName</th>
         <td mat-cell *matCellDef="let row">{{row.v2UserName}}</td>
       </ng-container>
 
-      <!-- Second Verification Date Column -->
+      <!-- V2 Date Column -->
       <ng-container matColumnDef="v2DateTime">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>V2 DateTime</th>
         <td mat-cell *matCellDef="let row">{{row.v2DateTime | date : 'medium'}}</td>
       </ng-container>
 
-      <!-- Second Verification Passed Column -->
+      <!-- V2 Passed Column -->
       <ng-container matColumnDef="v2Passed">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>V2 Result</th>
         <td mat-cell *matCellDef="let row">{{row.v2Passed}}</td>
+      </ng-container>
+
+      <!-- Sales Order Column -->
+      <ng-container matColumnDef="salesOrder">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Sales Order No</th>
+        <td mat-cell *matCellDef="let row">{{row.salesOrder}}</td>
+      </ng-container>
+      
+      <!-- Customer Stockcode Column -->
+      <ng-container matColumnDef="customerStockCode">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Customer StockCode</th>
+        <td mat-cell *matCellDef="let row">{{row.customerStockCode}}</td>
+      </ng-container>
+
+      <!-- Stock Description Column -->
+      <ng-container matColumnDef="stockDescription">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Stock Description</th>
+        <td mat-cell *matCellDef="let row">{{row.stockDescription}}</td>
+      </ng-container>
+
+      <!-- Dispatch Date Column -->
+      <ng-container matColumnDef="dispatchDate">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Dispatch Date</th>
+        <td mat-cell *matCellDef="let row">{{row.dispatchDate}}</td>
+      </ng-container>
+      
+      <!-- Stockcode Column -->
+      <ng-container matColumnDef="stockCode">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>StockCode</th>
+        <td mat-cell *matCellDef="let row">{{row.stockCode}}</td>
       </ng-container>
 
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

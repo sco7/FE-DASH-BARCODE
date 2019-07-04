@@ -9,7 +9,7 @@ import { catchError, tap } from 'rxjs/operators';
 })
 export class VerificationService {
 
-  apiUrl = 'https://localhost:6001/api/verification';
+  apiUrl = 'https://localhost:5000/api/verification';
 
   constructor(private http: HttpClient) { }
 
