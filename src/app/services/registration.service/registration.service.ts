@@ -3,6 +3,7 @@ import { Verification } from '../../verification/verification';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
+import { AppConfigService } from '../app-config.service';
 
 @Injectable({
   providedIn: 'root'
@@ -10,10 +11,11 @@ import { catchError, tap } from 'rxjs/operators';
 export class RegistrationService {
 
     // Request random Authorized API endpoint to check user has Authentication
+    apiUrl = 'https://localhost:5000/api/auth/';
 
-    apiUrl = 'https://localhost:5000/api/verification';
-
-    constructor(private http: HttpClient) { }
+    constructor(private http: HttpClient, private conf: AppConfigService) {
+      this.apiUrl = conf.getConfig().ApiAddress + '/auth';
+     }
 
     getVerification(): Observable<Verification[]> {
         return this.http.get<Verification[]>(this.apiUrl)
@@ -24,7 +26,7 @@ export class RegistrationService {
     }
     private handleError<T>(operation = 'operation', result?: T) {
         return (error: any): Observable<T> => {
-            console.error(error); 
+            console.error(error);
             this.log(`${operation} failed: ${error.message}`);
             return of(result as T);
         };

@@ -3,11 +3,14 @@ import { Routes, RouterModule } from '@angular/router';
 import { VerificationComponent } from './verification/verification.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
+import { TokenInterceptor } from './interceptors/token.interceptor';
+import { AuthGuard } from './interceptors/auth.guard';
 
 const routes: Routes = [
   {
     path: 'verification',
     component: VerificationComponent,
+    canActivate: [AuthGuard],
     data: { title: 'Verification' }
   },
   {
@@ -18,7 +21,12 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent,
+    canActivate: [AuthGuard],
     data: { title: 'Register' }
+  },
+  {
+    path: '**',
+    redirectTo: 'verification'
   }
 ];
 

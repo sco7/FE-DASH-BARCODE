@@ -3,6 +3,7 @@ import { Verification } from '../../verification/verification';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
+import { AppConfigService } from '../app-config.service';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,9 @@ export class VerificationService {
 
   apiUrl = 'https://localhost:5000/api/verification';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private conf: AppConfigService) {
+    this.apiUrl = conf.getConfig().ApiAddress + '/verification';
+   }
 
   getVerification(): Observable<Verification[]> {
     return this.http.get<Verification[]>(this.apiUrl)

@@ -46,10 +46,10 @@ export class TokenInterceptor implements HttpInterceptor {
                   type: 'success',
                   title: 'Registered',
                   text: 'New user registered!',
-                  confirmButtonColor: '#ff0066' 
+                  confirmButtonColor: '#ff0066'
                 });
               }
-              if (event.statusText === "OK" && this.router.url === '/verification') {             
+              if (event.statusText === "OK" && this.router.url === '/verification') {
                 Swal.fire({
                   type: 'success',
                   title: 'Logged in successfully',
@@ -59,7 +59,7 @@ export class TokenInterceptor implements HttpInterceptor {
                   timer: 3000
                 });
               }
-            }         
+            }
             return event;
           }),
 
@@ -67,10 +67,10 @@ export class TokenInterceptor implements HttpInterceptor {
             console.log(error);
 
             if (error.status === 401) {
-             this.router.navigate(['login']);            
+             this.router.navigate(['login']);
             }
             if (error.status === 400) {
-              let errorMessage = "";          
+              let errorMessage = "";
               if (error.error.FullName !== undefined) errorMessage += (" " + error.error.FullName[0]);
               if (error.error.UserName !== undefined) errorMessage += (" " + error.error.UserName[0]);
               if (error.error.Password !== undefined) errorMessage += (" " + error.error.Password[0]);
@@ -84,9 +84,9 @@ export class TokenInterceptor implements HttpInterceptor {
                 type: 'error',
                 title: 'Oops',
                 text: errorMessage,
-                confirmButtonColor: '#ff0066' 
-              });             
-              
+                confirmButtonColor: '#ff0066'
+              });
+
             }
             return throwError(error);
           }));

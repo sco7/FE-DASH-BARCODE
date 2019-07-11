@@ -21,6 +21,7 @@ import {
   MatButtonModule,
   MatCardModule,
   MatFormFieldModule } from '@angular/material';
+import { AuthGuard } from './interceptors/auth.guard';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,7 @@ import {
     MatCardModule,
     MatFormFieldModule
   ],
-  providers: [
+  providers: [AuthGuard,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,
