@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Location } from '@angular/common';
 import { AppConfigService } from './services/app-config.service';
 
 @Component({
